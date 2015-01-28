@@ -15,9 +15,9 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="..\..\boost_1_57_0\boost_1_57_0\bin.v2\libs\system\build\gcc-mingw-4.7.1\debug\link-static\threading-multi\libboost_system-mgw47-mt-d-1_57.a" />
+					<Add library="F:\boost_1_57_0\boost_1_57_0\bin.v2\libs\system\build\gcc-mingw-4.7.1\debug\link-static\threading-multi\libboost_system-mgw47-mt-d-1_57.a" />
 					<Add library="C:\MinGW_old\lib\libws2_32.a" />
-					<Add library="..\..\boost\lib\libboost_thread-mgw47-mt-d-1_57.a" />
+					<Add library="F:\boost\lib\libboost_thread-mgw47-mt-d-1_57.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -45,6 +45,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="reply.cpp" />
 		<Unit filename="reply.hpp" />
+		<Unit filename="request.hpp" />
 		<Unit filename="request_handler.cpp" />
 		<Unit filename="request_handler.hpp" />
 		<Unit filename="request_parser.cpp" />
