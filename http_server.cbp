@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="http_server" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/http_server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="..\..\boost_1_57_0\boost_1_57_0\bin.v2\libs\system\build\gcc-mingw-4.7.1\debug\link-static\threading-multi\libboost_system-mgw47-mt-d-1_57.a" />
+					<Add library="C:\MinGW_old\lib\libws2_32.a" />
+					<Add library="..\..\boost\lib\libboost_thread-mgw47-mt-d-1_57.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/http_server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="connection.cpp" />
+		<Unit filename="connection.hpp" />
+		<Unit filename="connection_manager.cpp" />
+		<Unit filename="connection_manager.hpp" />
+		<Unit filename="header.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="reply.cpp" />
+		<Unit filename="reply.hpp" />
+		<Unit filename="request_handler.cpp" />
+		<Unit filename="request_handler.hpp" />
+		<Unit filename="request_parser.cpp" />
+		<Unit filename="request_parser.hpp" />
+		<Unit filename="server.cpp" />
+		<Unit filename="server.hpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

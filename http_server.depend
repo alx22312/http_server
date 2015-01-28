@@ -1,0 +1,90 @@
+# depslib dependency file v1.0
+1422375575 source:f:\c\http\http_server\connection.cpp
+	"connection.hpp"
+	<vector>
+	<boost/bind.hpp>
+	"connection_manager.hpp"
+	"request_handler.hpp"
+
+1422375590 f:\c\http\http_server\connection.hpp
+	<boost/asio.hpp>
+	<boost/array.hpp>
+	<boost/noncopyable.hpp>
+	<boost/shared_ptr.hpp>
+	<boost/enable_shared_from_this.hpp>
+	"reply.hpp"
+	"request.hpp"
+	"request_handler.hpp"
+	"request_parser.hpp"
+
+1422474276 f:\c\http\http_server\reply.hpp
+	<string>
+	<vector>
+	<boost/asio.hpp>
+	"header.hpp"
+
+1422359095 f:\c\http\http_server\header.hpp
+	<string>
+
+1422473205 f:\c\http\http_server\request.hpp
+	<string>
+	<vector>
+	"header.hpp"
+
+1422376375 f:\c\http\http_server\request_handler.hpp
+	<string>
+	<boost/noncopyable.hpp>
+
+1422375640 f:\c\http\http_server\request_parser.hpp
+	<boost/logic/tribool.hpp>
+	<boost/tuple/tuple.hpp>
+
+1422359025 f:\c\http\http_server\connection_manager.hpp
+	<set>
+	<boost/noncopyable.hpp>
+	"connection.hpp"
+
+1422358955 source:f:\c\http\http_server\connection_manager.cpp
+	"connection_manager.hpp"
+	<algorithm>
+	<boost/bind.hpp>
+
+1422474304 source:f:\c\http\http_server\main.cpp
+	<iostream>
+	<string>
+	<boost/asio.hpp>
+	<boost/bind.hpp>
+	"server.hpp"
+
+1422366759 f:\c\http\http_server\server.hpp
+	<boost/asio.hpp>
+	<string>
+	<boost/noncopyable.hpp>
+	"connection.hpp"
+	"connection_manager.hpp"
+	"request_handler.hpp"
+
+1422474454 source:f:\c\http\http_server\reply.cpp
+	"reply.hpp"
+	<string>
+	<boost/lexical_cast.hpp>
+
+1422474466 source:f:\c\http\http_server\request_handler.cpp
+	"request_handler.hpp"
+	<fstream>
+	<sstream>
+	<string>
+	<boost/lexical_cast.hpp>
+	"reply.hpp"
+	"request.hpp"
+
+1422375671 source:f:\c\http\http_server\request_parser.cpp
+	"request_parser.hpp"
+	"request.hpp"
+
+1422475856 source:f:\c\http\http_server\server.cpp
+	"server.hpp"
+	<boost/bind.hpp>
+	<signal.h>
+	<boost/asio.hpp>
+
