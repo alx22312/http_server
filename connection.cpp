@@ -42,18 +42,19 @@ void connection::handle_read(const boost::system::error_code& e,
     boost::tribool result;
     boost::tie(result, boost::tuples::ignore) = request_parser_.parse(
         request_, buffer_.data(), buffer_.data() + bytes_transferred);
-
     if (result)
     {
       request_handler_.handle_request(request_, reply_);
-      boost::asio::async_write(socket_, reply_.to_buffers(),
+      boost::asio::async_write(socket_,
+        reply_.to_buffers(),
           boost::bind(&connection::handle_write, shared_from_this(),
             boost::asio::placeholders::error));
     }
     else if (!result)
     {
       reply_ = reply::stock_reply(reply::bad_request);
-      boost::asio::async_write(socket_, reply_.to_buffers(),
+      boost::asio::async_write(socket_,
+         reply_.to_buffers(),
           boost::bind(&connection::handle_write, shared_from_this(),
             boost::asio::placeholders::error));
     }
@@ -73,12 +74,12 @@ void connection::handle_read(const boost::system::error_code& e,
 
 void connection::handle_write(const boost::system::error_code& e)
 {
-/*  if (!e)
-  {
-    // Initiate graceful connection closure.
-    boost::system::error_code ignored_ec;
-    socket_.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignored_ec);
-  }*/
+//  if (!e)
+//  {
+//    // Initiate graceful connection closure.
+//    boost::system::error_code ignored_ec;
+//    socket_.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignored_ec);
+//  }
 
   if ((e != boost::asio::error::operation_aborted)&&
       (e != 0))

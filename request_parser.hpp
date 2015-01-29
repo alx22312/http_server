@@ -4,6 +4,14 @@
 
 #include <boost/logic/tribool.hpp>
 #include <boost/tuple/tuple.hpp>
+#include <cstdlib>
+#include <iostream>
+#include <sstream>
+#include <boost/bind.hpp>
+#include <boost/smart_ptr.hpp>
+#include <boost/asio.hpp>
+#include <boost/thread/thread.hpp>
+#include <boost/thread/recursive_mutex.hpp>
 
 namespace http {
 namespace server {
@@ -36,6 +44,7 @@ public:
         return boost::make_tuple(result, begin);
     }
     boost::tribool result = boost::indeterminate;
+    //parse_command(req);
     return boost::make_tuple(result, begin);
   }
 
@@ -43,6 +52,7 @@ private:
   /// Handle the next character of input.
   boost::tribool consume(request& req, char input);
 
+  //void parse_command(request& req);
   /// Check if a byte is an HTTP character.
   static bool is_char(int c);
 

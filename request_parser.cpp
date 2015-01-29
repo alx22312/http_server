@@ -16,6 +16,7 @@ void request_parser::reset()
 
 boost::tribool request_parser::consume(request& req, char input)
 {
+  req.buff.push_back(input);
   switch (state_)
   {
   case method_start:
@@ -271,6 +272,152 @@ boost::tribool request_parser::consume(request& req, char input)
     return false;
   }
 }
+
+//void request_parser::parse_command(request& req)
+//{
+//  boost::recursive_mutex mutex;
+//  char uncorrect[] = "Uncorrect request\n";
+//  try
+//  {
+//  char get_command[] = "get";
+//  char add_command[] = "add";
+//  char del_command[] = "del";
+//  char wait_command[] = "wait";
+//  char wait_command1[] = "equal";
+//  char wait_command2[] = "greater";
+//  char wait_command3[] = "less";
+//  char done[] = "done\n";
+//  char str[max_length];
+//  char * pch;
+//  size_t * i =new size_t(0);
+//  size_t * com_num =new size_t(-1);
+//  size_t * tmp_N =new size_t(0);
+//  bool tmp_N_exist = false;
+//  std::cout << req.buff << "\n";
+//  strcpy(pch, req.buff.c_str());
+//  pch = strtok (pch,"/");
+//  while (pch != NULL)
+//  {
+//    *i=*i+1;
+//    switch(*i)
+//    {
+//    case 1:
+//        {
+//        if (std::strcmp(add_command,pch) == 0)
+//        if (add_command == pch)
+//             *com_num = 0;
+//        else if (del_command == pch)
+//        else if (std::strcmp(del_command,pch) == 0)
+//                *com_num = 1;
+//             else if (get_command == pch)
+//             else if (std::strcmp(get_command,pch) == 0)
+//             {
+//                 *com_num = 2;
+//                 break;
+//             }
+//             else if (wait_command == pch)
+//             else if (std::strcmp(wait_command,pch) == 0)
+//                    *com_num = -1;
+//        }
+//    case 2:
+//        {
+//        if (*com_num ==-1)
+//            {
+//                if (wait_command1 == pch)
+//                if (std::strcmp(wait_command1,pch) == 0)
+//                     *com_num = 3;
+//                else if (wait_command2 == pch)
+//                else if (std::strcmp(wait_command2,pch) == 0)
+//                        *com_num = 4;
+//                     else if (wait_command3 == pch)
+//                     else if (std::strcmp(wait_command3,pch) == 0)
+//                            *com_num = 5;
+//            }
+//            else
+//            {
+//                if (isdigit(*pch))
+//                    {
+//                        *tmp_N = atoi(pch);
+//                        tmp_N_exist = true;
+//                        break;
+//                    }
+//            }
+//        }
+//    case 3:
+//        {
+//        if (isdigit(*pch))
+//            {
+//                *tmp_N = atoi(pch);
+//                tmp_N_exist = true;
+//            }
+//        }
+//    }
+//    pch = strtok (NULL, "/");
+//  }
+//    if (*com_num==2)
+//    {
+//        sprintf(str, "N = %u\n",N);
+//        std::cout << str;
+//        std::cout << strlen(str) << "\n";
+//        return str;
+//    }
+//    if (tmp_N_exist)
+//        switch (*com_num)
+//        {
+//            case 0:
+//                {
+//                    boost::recursive_mutex::scoped_lock scoped_lock(mutex);
+//                    N= N + *tmp_N;
+//                    return done;
+//                }
+//            case 1:
+//                {
+//                    boost::recursive_mutex::scoped_lock scoped_lock(mutex);
+//                    N= N - *tmp_N;
+//                    return done;
+//                }
+//            case 3:
+//                {
+//                     for (;;)
+//                        {
+//                            if (N==*tmp_N)
+//                            {
+//                                return done;
+//                            }
+//                        }
+//                }
+//             case 4:
+//                {
+//                     for (;;)
+//                        {
+//                            if (N>*tmp_N)
+//                            {
+//                                return done;
+//                            }
+//                        }
+//                }
+//            case 5:
+//                {
+//                     for (;;)
+//                        {
+//                            if (N<*tmp_N)
+//                            {
+//                                return done;
+//                            }
+//                        }
+//                }
+//        }
+//    else if (*com_num!=2)
+//        *com_num=-2;
+//    if (*com_num==-2)
+//        //return uncorrect;
+//  }
+//  catch (std::exception& e)
+//  {
+//    std::cerr << "Exception in thread: " << e.what() << "\n";
+//    return uncorrect;
+//  }
+//}
 
 bool request_parser::is_char(int c)
 {

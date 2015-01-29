@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1422489752 source:f:\c\http\http_server\connection.cpp
+1422559169 source:f:\c\http\http_server\connection.cpp
 	"connection.hpp"
 	<vector>
 	<boost/bind.hpp>
@@ -7,7 +7,7 @@
 	"request_handler.hpp"
 	<iostream>
 
-1422488945 f:\c\http\http_server\connection.hpp
+1422537680 f:\c\http\http_server\connection.hpp
 	<boost/asio.hpp>
 	<boost/array.hpp>
 	<boost/noncopyable.hpp>
@@ -18,7 +18,7 @@
 	"request_handler.hpp"
 	"request_parser.hpp"
 
-1422528543 f:\c\http\http_server\reply.hpp
+1422546381 f:\c\http\http_server\reply.hpp
 	<string>
 	<vector>
 	<boost/asio.hpp>
@@ -27,18 +27,26 @@
 1422359095 f:\c\http\http_server\header.hpp
 	<string>
 
-1422473205 f:\c\http\http_server\request.hpp
+1422543594 f:\c\http\http_server\request.hpp
 	<string>
 	<vector>
 	"header.hpp"
 
-1422376375 f:\c\http\http_server\request_handler.hpp
+1422559670 f:\c\http\http_server\request_handler.hpp
 	<string>
 	<boost/noncopyable.hpp>
 
-1422531140 f:\c\http\http_server\request_parser.hpp
+1422560522 f:\c\http\http_server\request_parser.hpp
 	<boost/logic/tribool.hpp>
 	<boost/tuple/tuple.hpp>
+	<cstdlib>
+	<iostream>
+	<sstream>
+	<boost/bind.hpp>
+	<boost/smart_ptr.hpp>
+	<boost/asio.hpp>
+	<boost/thread/thread.hpp>
+	<boost/thread/recursive_mutex.hpp>
 
 1422359025 f:\c\http\http_server\connection_manager.hpp
 	<set>
@@ -50,14 +58,14 @@
 	<algorithm>
 	<boost/bind.hpp>
 
-1422482806 source:f:\c\http\http_server\main.cpp
+1422552960 source:f:\c\http\http_server\main.cpp
 	<iostream>
 	<string>
 	<boost/asio.hpp>
 	<boost/bind.hpp>
 	"server.hpp"
 
-1422366759 f:\c\http\http_server\server.hpp
+1422554811 f:\c\http\http_server\server.hpp
 	<boost/asio.hpp>
 	<string>
 	<boost/noncopyable.hpp>
@@ -65,21 +73,25 @@
 	"connection_manager.hpp"
 	"request_handler.hpp"
 
-1422528599 source:f:\c\http\http_server\reply.cpp
+1422545548 source:f:\c\http\http_server\reply.cpp
 	"reply.hpp"
 	<string>
 	<boost/lexical_cast.hpp>
 
-1422474466 source:f:\c\http\http_server\request_handler.cpp
+1422560698 source:f:\c\http\http_server\request_handler.cpp
 	"request_handler.hpp"
+	<iostream>
 	<fstream>
 	<sstream>
 	<string>
 	<boost/lexical_cast.hpp>
+	<boost/thread/recursive_mutex.hpp>
 	"reply.hpp"
 	"request.hpp"
+	<vector>
+	<boost/algorithm/string.hpp>
 
-1422529857 source:f:\c\http\http_server\request_parser.cpp
+1422560635 source:f:\c\http\http_server\request_parser.cpp
 	"request_parser.hpp"
 	"request.hpp"
 

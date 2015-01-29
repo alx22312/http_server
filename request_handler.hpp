@@ -10,6 +10,10 @@ namespace server {
 struct reply;
 struct request;
 
+extern size_t N;
+
+extern size_t max_length;
+
 /// The common handler for all incoming requests.
 class request_handler
   : private boost::noncopyable
@@ -19,9 +23,11 @@ public:
   explicit request_handler();
 
   /// Handle a request and produce a reply.
-  void handle_request(const request& req, reply& rep);
+  void handle_request(request& req, reply& rep);
 
-//private:
+private:
+
+std::string parse_command(request& req);
 
   //// Perform URL-decoding on a string. Returns false if the encoding was
   //// invalid.
