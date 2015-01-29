@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1422375575 source:f:\c\http\http_server\connection.cpp
+1422489752 source:f:\c\http\http_server\connection.cpp
 	"connection.hpp"
 	<vector>
 	<boost/bind.hpp>
 	"connection_manager.hpp"
 	"request_handler.hpp"
+	<iostream>
 
-1422375590 f:\c\http\http_server\connection.hpp
+1422488945 f:\c\http\http_server\connection.hpp
 	<boost/asio.hpp>
 	<boost/array.hpp>
 	<boost/noncopyable.hpp>
@@ -49,7 +50,7 @@
 	<algorithm>
 	<boost/bind.hpp>
 
-1422474304 source:f:\c\http\http_server\main.cpp
+1422482806 source:f:\c\http\http_server\main.cpp
 	<iostream>
 	<string>
 	<boost/asio.hpp>

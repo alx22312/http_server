@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
 //      std::cerr << "    receiver 0::0 80 .\n";
 //      return 1;
 //    }
+    setlocale(LC_CTYPE, "rus"); // вызов функции настройки локали
     std::string def_port = "2015";
     // Initialise the server.
     if(argv[1] != NULL)

@@ -3,6 +3,7 @@
 #include <boost/bind.hpp>
 #include "connection_manager.hpp"
 #include "request_handler.hpp"
+#include <iostream>
 
 namespace http {
 namespace server {
@@ -72,17 +73,23 @@ void connection::handle_read(const boost::system::error_code& e,
 
 void connection::handle_write(const boost::system::error_code& e)
 {
-  if (!e)
+/*  if (!e)
   {
     // Initiate graceful connection closure.
     boost::system::error_code ignored_ec;
     socket_.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignored_ec);
-  }
+  }*/
 
-  if (e != boost::asio::error::operation_aborted)
+  if ((e != boost::asio::error::operation_aborted)&&
+      (e != 0))
   {
+    std::cout << "Exception: " << e << "\n";
     connection_manager_.stop(shared_from_this());
   }
+    socket_.async_read_some(boost::asio::buffer(buffer_),
+      boost::bind(&connection::handle_read, shared_from_this(),
+        boost::asio::placeholders::error,
+        boost::asio::placeholders::bytes_transferred));
 }
 
 } // namespace server
