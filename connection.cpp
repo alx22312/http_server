@@ -87,6 +87,7 @@ void connection::handle_write(const boost::system::error_code& e)
     std::cout << "Exception: " << e << "\n";
     connection_manager_.stop(shared_from_this());
   }
+    //continue cycle...
     socket_.async_read_some(boost::asio::buffer(buffer_),
       boost::bind(&connection::handle_read, shared_from_this(),
         boost::asio::placeholders::error,

@@ -120,6 +120,7 @@ std::string request_handler::parse_command(request& req)
 //        std::cout << strlen(str) << "\n";
         return str;
     }
+    //Case 0,1,3 - locked
     if (tmp_N_exist)
         switch (*com_num)
         {
@@ -167,7 +168,10 @@ std::string request_handler::parse_command(request& req)
                 }
         }
     else if (*com_num!=2)
+    {
         *com_num=-2;
+        return uncorrect;
+    }
 //    if (*com_num==-2)
 //        return uncorrect;
     delete [] pch;

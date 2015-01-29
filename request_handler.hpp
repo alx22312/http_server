@@ -9,7 +9,7 @@ namespace server {
 
 struct reply;
 struct request;
-
+//Global
 extern size_t N;
 
 extern size_t max_length;
@@ -23,10 +23,11 @@ public:
   explicit request_handler();
 
   /// Handle a request and produce a reply.
+  /// and DELETE rep.buff
   void handle_request(request& req, reply& rep);
 
 private:
-
+/// Parse command between GET and HTTP...
 std::string parse_command(request& req);
 
   //// Perform URL-decoding on a string. Returns false if the encoding was
