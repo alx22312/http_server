@@ -46,7 +46,7 @@ boost::asio::const_buffer to_buffer(reply::status_type status)
   {
   case reply::ok:
     return boost::asio::buffer(ok);
-/*  case reply::created:
+  case reply::created:
     return boost::asio::buffer(created);
   case reply::accepted:
     return boost::asio::buffer(accepted);
@@ -60,8 +60,8 @@ boost::asio::const_buffer to_buffer(reply::status_type status)
     return boost::asio::buffer(moved_temporarily);
   case reply::not_modified:
     return boost::asio::buffer(not_modified);
-  case reply::bad_request:*/
-    return boost::asio::buffer(bad_request);/*
+  case reply::bad_request:
+    return boost::asio::buffer(bad_request);
   case reply::unauthorized:
     return boost::asio::buffer(unauthorized);
   case reply::forbidden:
@@ -77,7 +77,7 @@ boost::asio::const_buffer to_buffer(reply::status_type status)
   case reply::service_unavailable:
     return boost::asio::buffer(service_unavailable);
   default:
-    return boost::asio::buffer(internal_server_error);*/
+    return boost::asio::buffer(internal_server_error);
   }
 }
 
@@ -110,7 +110,7 @@ std::vector<boost::asio::const_buffer> reply::to_buffers()
 namespace stock_replies {
 
 const char ok[] = "";
-/*const char created[] =
+const char created[] =
   "<html>"
   "<head><title>Created</title></head>"
   "<body><h1>201 Created</h1></body>"
@@ -144,12 +144,12 @@ const char not_modified[] =
   "<html>"
   "<head><title>Not Modified</title></head>"
   "<body><h1>304 Not Modified</h1></body>"
-  "</html>";*/
+  "</html>";
 const char bad_request[] =
   "<html>"
   "<head><title>Bad Request</title></head>"
   "<body><h1>400 Bad Request</h1></body>"
-  "</html>";/*
+  "</html>";
 const char unauthorized[] =
   "<html>"
   "<head><title>Unauthorized</title></head>"
@@ -184,14 +184,14 @@ const char service_unavailable[] =
   "<html>"
   "<head><title>Service Unavailable</title></head>"
   "<body><h1>503 Service Unavailable</h1></body>"
-  "</html>";*/
+  "</html>";
 
 std::string to_string(reply::status_type status)
 {
   switch (status)
   {
   case reply::ok:
-    return ok;/*
+    return ok;
   case reply::created:
     return created;
   case reply::accepted:
@@ -205,9 +205,9 @@ std::string to_string(reply::status_type status)
   case reply::moved_temporarily:
     return moved_temporarily;
   case reply::not_modified:
-    return not_modified;*/
+    return not_modified;
   case reply::bad_request:
-    return bad_request;/*
+    return bad_request;
   case reply::unauthorized:
     return unauthorized;
   case reply::forbidden:
@@ -223,7 +223,7 @@ std::string to_string(reply::status_type status)
   case reply::service_unavailable:
     return service_unavailable;
   default:
-    return internal_server_error;*/
+    return internal_server_error;
   }
 }
 
